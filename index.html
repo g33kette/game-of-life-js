@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Game of Life</title>
+        <link rel="shortcut icon" href="https://jobuxton.me.uk/img/drop-small-green.png" sizes="32x32" type="image/png">
+        <style>
+            /* General Page Styles */
+            body {
+                text-align: center;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            img {
+                height: 30px;
+                top: 3px;
+                position: relative;
+                margin-right: 10px;
+            }
+            button, input, select {
+                border-radius: 5px;                
+                padding: 10px 20px;
+                text-align: center;
+                font-weight: bold;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 16px;
+            }
+            button {
+                background-color: #333;
+                border: none;
+                color: lawngreen;
+                cursor: pointer;
+            }
+            /* Grid Styling */
+            #container table {
+                margin: auto;
+            }
+            table > tr > td {
+                background-color: #ddd;
+                width: 7px;
+                height: 7px;
+            }
+            table > tr > td.alive {
+                background-color: #68e239 !important;
+            }
+            table > tr > td[class*="decay-"] {
+                background-color: #bbb;
+            }
+            /* Message Styling */
+            #message {
+                height: 2em;
+                color: #666;
+                display: inline-block;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+            #message .error {
+                color: orangered;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1><img src="https://jobuxton.me.uk/img/drop-small-green.png">Game of Life</h1>
+        <div id="container"></div>
+        <p id="message"></p>
+        <div>
+            <button onclick="start()">Start</button>
+            <button onclick="stop()">Stop</button>
+            <button onclick="next()">Next</button>
+            <button onclick="reset()">Reset</button>
+            X: <input type="number" min="5" max="500" step=1 id="sizeX">
+            Y: <input type="number" min="5" max="500" step=1 id="sizeY">
+            <button onclick="setSize()">Set Size</button>
+            <select id="trail" onchange="setTrail()">
+                <option value="0">No Trail</option>
+                <option value="1">Trail 1 Generation</option>
+                <option value="2">Trail 2 Generations</option>
+                <option value="3">Trail 3 Generations</option>
+                <option value="4">Trail 4 Generations</option>
+                <option value="5">Trail 5 Generations</option>
+                <option value="6">Trail 6 Generations</option>
+                <option value="7">Trail 7 Generations</option>
+                <option value="8">Trail 8 Generations</option>
+                <option value="9">Trail 9 Generations</option>
+                <option value="10">Trail 10 Generations</option>
+            </select>
+        </div>
+        <script type="text/javascript" src="./game-of-life.js"></script>
+    </body>
+</html>
